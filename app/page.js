@@ -1,6 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import localFont from "next/font/local";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const poppins = localFont({
   src: "./fonts/Poppins-ExtraBold.ttf",
@@ -9,8 +16,45 @@ const poppins = localFont({
 });
 
 export default function Home() {
+
+  const { data: session } = useSession();
+
+  const router = useRouter();
+
+  useEffect(() => {
+
+    if(session){
+      router.push("/");
+    }
+    else{
+      router.push("/login");
+    }
+  
+  }, [router, session])
+  
+  useEffect(() => {
+    
+    if(session){
+       toast.success("Welcome, " + session.user.name);
+    }
+    
+  }, [])
+  
+
   return (
     <main className="bg-purple-100">
+        <ToastContainer
+                position="top-right"
+                autoClose={1000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
       <section className="grid grid-cols-2 h-[91vh]">
         <div className="flex flex-col gap-4 items-center justify-center">
           <p className={`text-3xl font-bold ${poppins.className}`}>
