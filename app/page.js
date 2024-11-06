@@ -23,10 +23,7 @@ export default function Home() {
 
   useEffect(() => {
 
-    if(session){
-      router.push("/");
-    }
-    else{
+    if(!session){
       router.push("/login");
     }
   
