@@ -29,13 +29,13 @@ export default function Home() {
   
   }, [router, session])
   
-  useEffect(() => {
+  // useEffect(() => {
     
-    if(session){
-       toast.success("Welcome, " + session.user.name);
-    }
+  //   if(session){
+  //      toast.success("Welcome, " + session.user.name);
+  //   }
     
-  }, [])
+  // }, [])
   
 
   return (
