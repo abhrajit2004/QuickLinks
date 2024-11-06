@@ -16,13 +16,9 @@ const Shorten = () => {
     const { data: session } = useSession();
 
     useEffect(() => {
-        if (!session) {
+        if (session) {
             router.push('/login');
         }
-        else {
-            router.push('/shorten');
-        }
-
     }, [router, session])
 
 
