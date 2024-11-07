@@ -29,13 +29,13 @@ export default function Home() {
   
   }, [router, session])
   
-  // useEffect(() => {
+  useEffect(() => {
     
-  //   if(session){
-  //      toast.success("Welcome, " + session.user.name);
-  //   }
+    if(session){
+       toast.success("Welcome, " + session.user.name);
+    }
     
-  // }, [])
+  }, [])
   
 
   return (
@@ -61,7 +61,7 @@ export default function Home() {
             We are the most trusted URL shortener in the world. We understand your needs and hence we have created this URL shortener.
           </p>
           <div className='flex gap-3'>
-            <Link href={"/shorten"}><button className='bg-purple-500 shadow-lg p-3 rounded-lg font-bold py-1 text-white'>Try Now</button></Link>
+            <Link href={"/shorten"}><button className='bg-purple-500 hover:bg-purple-700 shadow-lg transition p-3 rounded-lg font-bold py-1 text-white'>Try Now</button></Link>
             <Link href={"/github"} target="_blank"><button className='bg-purple-500 shadow-lg p-3 rounded-lg font-bold py-1 text-white'>GitHub</button></Link>
           </div>
         </div>

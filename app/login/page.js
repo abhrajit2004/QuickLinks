@@ -15,8 +15,15 @@ const Login = () => {
             router.push('/');
         }
     }, [router, session])
-    
 
+    useEffect(() => {
+        document.title = "QuickLinks - Login"
+        if(!session){
+            toast.success("Logged out successfully");
+        }
+
+    }, [])
+    
     return (
         <div className='py-14 container mx-auto'>
              <ToastContainer
