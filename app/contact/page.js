@@ -11,7 +11,7 @@ const poppins = localFont({
     weight: "100 900",
 });
 
-const page = () => {
+const Contact = () => {
 
     useEffect(() => {
         document.title = "QuickLinks - Contact"
@@ -84,4 +84,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Contact

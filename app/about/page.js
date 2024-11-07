@@ -11,7 +11,7 @@ const poppins = localFont({
 });
 
 
-const page = () => {
+const About = () => {
 
     useEffect(() => {
       document.title = "QuickLinks - About"
@@ -27,4 +27,4 @@ const page = () => {
     )
 }
 
-export default page
+export default About
