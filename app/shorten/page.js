@@ -94,9 +94,9 @@ const Shorten = () => {
             />
             <h1 className='font-bold text-2xl'>Generate your short URLs</h1>
             <div className='flex flex-col gap-2'>
-                <input onChange={(e) => seturl(e.target.value)} type="text" className='px-4 py-2 focus:outline-purple-600 rounded-md' value={url} placeholder="Enter your URL" required />
-                <input onChange={(e) => setshortUrl(e.target.value)} type="text" className='px-4 py-2 focus:outline-purple-600 rounded-md' value={shortUrl} placeholder="Enter your preferred short URL text" required />
-                <button onClick={generate} className='bg-purple-500 shadow-lg hover:bg-purple-700 transition p-3 rounded-lg font-bold py-1 text-white my-3'>Click to Shorten</button>
+                <input onChange={(e) => seturl(e.target.value)} type="text" className='px-4 py-2 focus:outline-purple-600 rounded-md' value={url} placeholder="Enter your URL" />
+                <input onChange={(e) => setshortUrl(e.target.value)} type="text" className='px-4 py-2 focus:outline-purple-600 rounded-md' value={shortUrl} placeholder="Enter your preferred short URL text" />
+                <button onClick={generate} className='bg-purple-500 shadow-lg hover:bg-purple-700 transition p-3 rounded-lg font-bold py-1 text-white my-3 disabled:bg-violet-300' disabled={url.length < 5 || shortUrl.length === 0}>Click to Shorten</button>
                 <button onClick={getURLs} className='bg-purple-500 shadow-lg hover:bg-purple-700 transition p-3 rounded-lg font-bold py-1 text-white'>See Your Previously Generated Links</button>
             </div>
 
