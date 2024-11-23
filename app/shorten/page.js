@@ -87,7 +87,6 @@ const Shorten = () => {
         generateref.current.classList.add('hidden');
         updateref.current.classList.remove('hidden');
         urlRef.current.classList.add('hidden');
-        console.log(urlRef.current);
 
     }
 
